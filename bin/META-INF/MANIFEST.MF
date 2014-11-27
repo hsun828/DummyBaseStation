@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.tritronics.basestation.dummy.binary.DummyBaseStationBi
+ nary
+

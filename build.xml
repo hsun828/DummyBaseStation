@@ -1,0 +1,41 @@
+<project name="DummyBaseStation" default="makeJar" basedir=".">
+    <description>DummyBaseStation</description>
+
+    <property name="srcDir" value="src" />
+    <property name="buildDir" value="bin" />
+    <property name="jarFileName" value="DummyBaseStation.jar" />
+    <property name="jarDir" value="./build" />
+
+
+    <path id="DummyBaseStation.classpath">
+            <pathelement location="libs/json-simple-1.1.1.jar"/>
+    </path>
+
+    <target name="init">
+        <delete dir="${jarDir}" />
+        <delete dir="${buildDir}" />
+        <mkdir dir="${jarDir}" />
+        <mkdir dir="${buildDir}" />
+        <copy todir="${jarDir}/data">
+            <fileset dir="data"/>
+        </copy>
+        <copy todir="${jarDir}" file="startup.bat"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${srcDir}" destdir="${buildDir}" source="1.6"
+               target="1.6" debug="on" optimize="on" includeAntRuntime="false">
+            <classpath location="libs/json-simple-1.1.1.jar"/>
+        </javac>
+    </target>
+
+    <target name="makeJar" depends="compile">
+        <jar jarfile="${jarDir}/${jarFileName}"
+             basedir="${buildDir}"
+             excludes=""
+             manifest="src/META-INF/MANIFEST.MF">
+        <zipfileset includes="**/*" src="libs/json-simple-1.1.1.jar"/>
+        </jar>
+    </target>
+
+</project>

@@ -1,0 +1,18 @@
+//
+// Stroke: 1-Free, 2-Breast, 3-Fly, 4-Back, 5-Drill, 6-Kick;
+// Distance is a multiple of 25; lap = Distance/(Pool length*2); 
+//
+
+{
+	"SwimmerCount":5,
+	"PoolLength":25,
+	"Sessions": [
+		{"Stroke":3, "Interval":80, "Rest":3, "Distance":400 },
+		{"Stroke":4, "Interval":70, "Rest":3, "Distance":400 },
+		{"Stroke":2, "Interval":75, "Rest":1, "Distance":400},
+		{"Stroke":1, "Interval":75, "Rest":1, "Distance":200},
+		{"Stroke":1, "Interval":80, "Rest":1, "Distance":100},
+		{"Stroke":1, "Interval":75, "Rest":1, "Distance":100},
+		{"Stroke":1, "Interval":70, "Rest":1, "Distance":100}
+	]
+}
